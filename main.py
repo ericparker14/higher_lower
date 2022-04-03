@@ -1,4 +1,5 @@
 # TODO 1: print logo
+from telnetlib import LOGOUT
 import art
 import random
 from game_data import data
@@ -32,7 +33,6 @@ choice_a, choice_b = random.choices(data, k = 2)
 
 
 def game():
-    clear()
     SCORE = 0
     is_game_over = False
     while  not is_game_over:
@@ -46,7 +46,8 @@ def game():
         answer = compare()
         player_answer = input("Who has more followers? Type 'A' or 'B':\n")
         player_choice = choice(player_choice=player_answer)
-
+        clear()
+        print(art.logo)
         # to compare return values of both functions and see their relationship
         if player_choice == answer:
             print("You are correct")
@@ -61,10 +62,8 @@ def game():
             print("You are wrong. You lose")
             is_game_over = True
 
-
-play_game = input("Would you like to play the higher or lower game? Enter 'y' for yes and 'n' for no.")
-if play_game == "y":
+# to ask user to play after round is over
+while input("Would you like to play the higher or lower game? Enter 'y' for yes and 'n' for no.") == "y":
     game()
-
 
 
