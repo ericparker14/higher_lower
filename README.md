@@ -1,2 +1,2 @@
 # higher_lower
-a little higher lower game for some fun
+A higher lower game used to guess the amount of instagram followers of celebrities and major companies.
